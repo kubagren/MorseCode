@@ -1,11 +1,11 @@
-#Projekt na zajęcia z translatorów
+# Projekt na zajęcia z translatorów
 
 Uczelnia: ATH Bielsko
 
-##Opis
+## Opis
 
 Projekt ma za zadanie przetłumaczenie tekstu napisanego w alfabecie łacińskim na kod Morse’a
 
-##Copyright
+## Copyright
 
 Copyright &copy; Jakub Greń;
