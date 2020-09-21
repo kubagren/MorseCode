@@ -8,4 +8,4 @@ Projekt ma za zadanie przetłumaczenie tekstu napisanego w alfabecie łacińskim
 
 ## Copyright
 
-Copyright &copy; Jakub Greń;
+Copyright &copy; Jakub Greń
