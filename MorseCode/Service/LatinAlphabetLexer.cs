@@ -13,21 +13,23 @@ namespace MorseCode.Service
 
             for (int index = 0; index < charsSequence.Length; index++)
             {
-                if(Char.IsWhiteSpace(charsSequence[index]))
+                string currentChar = charsSequence[index].ToString();
+
+                if (Char.IsWhiteSpace(charsSequence[index]))
                 {
-                    tokensList.Add(new Token(index, "SPACE", charsSequence[index].ToString()));
+                    tokensList.Add(new Token(index, "SPACE", currentChar));
                 }
-                else if (charsDictionary.lettersDictionary.ContainsKey(Char.ToLower(charsSequence[index])))
+                else if (charsDictionary.lettersDictionary.ContainsKey(currentChar.ToLower()))
                 {
-                    tokensList.Add(new Token(index, "LETTER", charsSequence[index].ToString()));
+                    tokensList.Add(new Token(index, "LETTER", currentChar));
                 }
-                else if (charsDictionary.numbersDictionary.ContainsKey(charsSequence[index]))
+                else if (charsDictionary.numbersDictionary.ContainsKey(currentChar))
                 {
-                    tokensList.Add(new Token(index, "NUMBER", charsSequence[index].ToString()));
+                    tokensList.Add(new Token(index, "NUMBER", currentChar));
                 }
-                else if (charsDictionary.symbolsDictionary.ContainsKey(charsSequence[index]))
+                else if (charsDictionary.symbolsDictionary.ContainsKey(currentChar))
                 {
-                    tokensList.Add(new Token(index, "SYMBOL", charsSequence[index].ToString()));
+                    tokensList.Add(new Token(index, "SYMBOL", currentChar));
                 }
             }
 

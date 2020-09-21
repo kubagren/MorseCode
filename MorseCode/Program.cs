@@ -10,6 +10,7 @@ namespace MorseCode
         static void Main(string[] args)
         {
             LatinAlphabetLexer latinAlphabetLexer = new LatinAlphabetLexer();
+            LatinAlphabetParser latinAlphabetParser = new LatinAlphabetParser();
 
             string charsSequence, isQuit;
 
@@ -21,8 +22,6 @@ namespace MorseCode
 
                 charsSequence = Console.ReadLine();
 
-                charsSequence = "TeSt 123 te1st?TEST"; //TODO: remove
-
                 List<Token> tokensList = latinAlphabetLexer.analizecCharsSequence(charsSequence);
 
                 Console.WriteLine("\nDane wyjściowe lexera Twojego tekstu:\n");
@@ -30,8 +29,12 @@ namespace MorseCode
 
                 foreach(Token token in tokensList)
                 {
-                    Console.WriteLine(" index: {0}, type: {1}, argument: {2}", token.id, token.type, token.argument);
+                    Console.WriteLine("[ index: {0}, type: {1}, argument: {2} ]", token.id, token.type, token.argument);
                 }
+
+                Console.WriteLine("\nTwój tekst zapisany w kodzie Morse’a:\n");
+
+                Console.WriteLine(latinAlphabetParser.parseToMorseCode(tokensList));
 
                 Console.WriteLine("\nCzy chcesz wyjść z programu? (y|N):");
                 isQuit = Console.ReadLine();
