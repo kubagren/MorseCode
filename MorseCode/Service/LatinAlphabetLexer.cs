@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MorseCode.Const;
 using MorseCode.Entity;
 
 namespace MorseCode.Service
@@ -17,19 +18,19 @@ namespace MorseCode.Service
 
                 if (Char.IsWhiteSpace(charsSequence[index]))
                 {
-                    tokensList.Add(new Token(index, "SPACE", currentChar));
+                    tokensList.Add(new Token(index, TokenTypes.SPACE, currentChar));
                 }
                 else if (charsDictionary.lettersDictionary.ContainsKey(currentChar.ToLower()))
                 {
-                    tokensList.Add(new Token(index, "LETTER", currentChar));
+                    tokensList.Add(new Token(index, TokenTypes.LETTER, currentChar));
                 }
                 else if (charsDictionary.numbersDictionary.ContainsKey(currentChar))
                 {
-                    tokensList.Add(new Token(index, "NUMBER", currentChar));
+                    tokensList.Add(new Token(index, TokenTypes.NUMBER, currentChar));
                 }
                 else if (charsDictionary.symbolsDictionary.ContainsKey(currentChar))
                 {
-                    tokensList.Add(new Token(index, "SYMBOL", currentChar));
+                    tokensList.Add(new Token(index, TokenTypes.SYMBOL, currentChar));
                 }
             }
 

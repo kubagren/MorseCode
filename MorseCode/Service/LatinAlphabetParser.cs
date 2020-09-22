@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MorseCode.Const;
 using MorseCode.Entity;
 using MorseCode.Service;
 
@@ -22,16 +23,16 @@ namespace MorseCode.Service
 
                 switch(token.type)
                 {
-                    case "SPACE":
+                    case TokenTypes.SPACE:
                         morseCode += "  ";
                         break;
-                    case "LETTER":
+                    case TokenTypes.LETTER:
                         morseCode += charsDictionary.lettersDictionary[token.argument.ToLower()];
                         break;
-                    case "NUMBER":
+                    case TokenTypes.NUMBER:
                         morseCode += charsDictionary.numbersDictionary[token.argument];
                         break;
-                    case "SYMBOL":
+                    case TokenTypes.SYMBOL:
                         morseCode += charsDictionary.symbolsDictionary[token.argument];
                         break;
                 }
